@@ -233,9 +233,9 @@ angular.module('ui.calendar', [])
         function (uiCalendarConfig) {
 
             return {
-                restrict : 'A',
+                restrict : 'E',
                 scope : {
-                    calendarSettings: '=uiCalendar',
+                    calendarSettings: '=',
                     eventSources : '=ngModel',
                     calendarWatchEvent : '&'
                 },
