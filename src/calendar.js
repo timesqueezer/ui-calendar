@@ -235,6 +235,7 @@ angular.module('ui.calendar', [])
             return {
                 restrict : 'A',
                 scope : {
+                    calendarSettings: '=uiCalendar',
                     eventSources : '=ngModel',
                     calendarWatchEvent : '&'
                 },
@@ -248,7 +249,8 @@ angular.module('ui.calendar', [])
                     var options = null;
 
                     function getOptions () {
-                        var calendarSettings = attrs.uiCalendar ? scope.$parent.$eval(attrs.uiCalendar) : {};
+                        console.log('HERE');
+                        var calendarSettings = scope.calendarSettings;
                         var fullCalendarConfig = controller.getFullCalendarConfig(calendarSettings, uiCalendarConfig);
                         var localeFullCalendarConfig = controller.getLocaleConfig(fullCalendarConfig);
                         angular.extend(localeFullCalendarConfig, fullCalendarConfig);
